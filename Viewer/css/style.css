@@ -1,0 +1,30 @@
+# Empty CSS file for your own CSS
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+
+}
+
+.line1 {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.line2 {
+  fill: none;
+  stroke: #B44682;
+  stroke-width: 1.5px;
+}
+
+.line3 {
+  fill: none;
+  stroke: #82B446;
+  stroke-width: 1.5px;
+}
