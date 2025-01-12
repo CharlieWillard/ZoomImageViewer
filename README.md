@@ -6,7 +6,7 @@ This tool allows conservators and other users to compare multiple images in a si
 
 - **2x2 Grid Layout**: View up to four images simultaneously for easy comparison.
 - **Dynamic Zoom and Pan**: Synchronize zoom and pan across all viewers for seamless navigation.
-- **Curtain Mode**: Compare images by adjusting image borders as your cursor moves, enabling interactive and intuitive comparisons.
+- **Curtain Mode**: Compare images by adjusting image borders as your cursor moves.
 - **Simple File Input**: Load images directly from your computer using the intuitive interface.
 - **Privacy Assured**: Images remain on your system and are not uploaded to any server.
 
