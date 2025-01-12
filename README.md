@@ -6,7 +6,7 @@ This tool allows conservators and other users to compare multiple images in a si
 
 - **2x2 Grid Layout**: View up to four images simultaneously for easy comparison.
 - **Dynamic Zoom and Pan**: Synchronize zoom and pan across all viewers for seamless navigation.
-- **Curtain Mode**: Overlay images and adjust visibility dynamically by moving the cursor, enabling interactive comparisons.
+- **Curtain Mode**: Compare images by adjusting image borders as your cursor moves, enabling interactive and intuitive comparisons.
 - **Simple File Input**: Load images directly from your computer using the intuitive interface.
 - **Privacy Assured**: Images remain on your system and are not uploaded to any server.
 
@@ -18,7 +18,7 @@ This tool allows conservators and other users to compare multiple images in a si
 
 1. **Open the Tool**:
 
-   - Access the viewer at the web deployment: [https://charliewillard.github.io/ZoomImageViewer/](https://charliewillard.github.io/ZoomImageViewer/)
+   - Access the viewer at the web deployment: <a href="https://charliewillard.github.io/ZoomImageViewer/" target="_blank">https://charliewillard.github.io/ZoomImageViewer/</a>
 
 2. **Load Images**:
 
@@ -30,16 +30,16 @@ This tool allows conservators and other users to compare multiple images in a si
 
 4. **Toggle Curtain Mode**:
 
-   - Check the "Curtain Viewer Mode" box to overlay the images. Move your cursor within the viewer to adjust visibility boundaries dynamically.
+   - Check the "Curtain Viewer Mode" box to change to curtain viewer mode. Move your cursor within the viewer to adjust image boundaries dynamically.
 
 ## File Formats Supported
 
 - **Standard Image Formats**: JPG, PNG, and TIFF are supported for easy comparison.
-- **Tiled Image Formats**: While the libraries used (e.g., OpenSeadragon) support tiled formats for very high-resolution imagery, browser restrictions may cause issues when loading such formats from local files. To use tiled images, consider hosting them online and making minor edits to the code.
+- **Tiled Image Formats**: While the libraries used (e.g., OpenSeadragon) support tiled image formats for very high-resolution imagery, browser restrictions may cause issues when loading such formats from local files. To use tiled images, consider hosting them online and making minor edits to the code.
 
 ## Limitations
 
-- Large image files may impact performance depending on your browser and system capabilities.
+- Very large image files may impact performance depending on your browser and system capabilities.
 - Images must be pre-aligned (co-registered) for accurate comparisons.
 
 ## Acknowledgments
