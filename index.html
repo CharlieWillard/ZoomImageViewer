@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Interactive Image Viewer</title>
-
-    <meta name="description" content="Interactive Image Viewer">
-    <meta name="author" content="Charlie Willard">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-  </head>
-  <body style="background-color:black;">
-	
-	
-	<div id="zoomViewer" class="row no-gutters">
-	  <div id="viewer1" class="col-md-6" style="height:50vh;"></div><!-- 
-	   --><div id="viewer2" class="col-md-6" style="height:50vh;"></div><!-- 
-	   --><div class="w-100 d-none d-md-block"></div><!-- 
-	   --><div id="viewer3" class="col-md-6" style="height:50vh;"></div><!-- 
-	   --><div id="viewer4" class="col-md-6" style="height:50vh;"></div>
-	</div>
-	
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/d3.min.js"></script>
-	<script src="seadragon/openseadragon.min.js"></script>
-	<script src="js/multi_sync_script.js"></script>
-	
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/3.1.0/openseadragon.min.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <label>
+            Image 1
+            <input type="file" id="imageInput1" accept="image/*">
+        </label>
+        <label>
+            Image 2
+            <input type="file" id="imageInput2" accept="image/*">
+        </label>
+        <label>
+            Image 3
+            <input type="file" id="imageInput3" accept="image/*">
+        </label>
+        <label>
+            Image 4
+            <input type="file" id="imageInput4" accept="image/*">
+        </label>
+        <label>
+            <input type="checkbox" id="toggleCurtainMode"> Curtain Viewer Mode
+        </label>
+    </div>
+    <div id="imageGrid">
+        <div class="image-cell" id="viewer1"></div>
+        <div class="image-cell" id="viewer2"></div>
+        <div class="image-cell" id="viewer3"></div>
+        <div class="image-cell" id="viewer4"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

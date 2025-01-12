@@ -1,0 +1,51 @@
+/* Ensure the body takes up the full viewport and prevents overflow */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #222; /* Dark background for better contrast */
+    color: #fff; /* Light text for readability */
+    overflow: hidden; /* Prevent scroll bars */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Ensure the controls and grid fit within the viewport without overflow */
+#controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #333;
+    border-bottom: 1px solid #444;
+    box-sizing: border-box; /* Include padding and border in height calculations */
+}
+
+#controls label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* Label text color */
+}
+
+#imageGrid {
+    width: 100vw;
+    height: calc(100vh - 60px); /* Adjust height to fit below controls */
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: #111; /* Default background when no images are loaded */
+    overflow: hidden; /* Prevent scroll bars in the grid */
+}
+
+/* Ensure each image-cell adapts to fill its allocated space */
+.image-cell {
+    position: relative;
+    border: none;
+    background: #222; /* Neutral background when no image is loaded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888; /* Subtle text color */
+    font-size: 16px;
+    font-style: italic;
+    overflow: hidden; /* Prevent scroll bars inside the cell */
+}
