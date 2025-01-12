@@ -1,13 +1,47 @@
-# ZoomImageViewer
+# Zoom Image Viewer
 
-This repository contains code for four synchronised high-resolution image viewers, used to display high-resolution images for comparison. 
+This tool allows conservators and other users to compare multiple images in a simple, user-friendly interface. It is designed to work with standard image files (JPG, PNG, TIFF) that are processed locally by your browser. Images do not leave your system, ensuring privacy and security. This tool assumes images are co-registered (aligned). If they are not, misalignment may appear in the viewer as the tool does not perform image registration.
 
-The code is designed to run in a browser using javascript. 
+## Features
 
-A demo of the viewer using this source code is available here: [https://charliewillard.github.io/ZoomImageViewer/](https://charliewillard.github.io/ZoomImageViewer/).
-The demo uses a high-resolution image of the [Girl with a Pearl Earring](https://commons.wikimedia.org/wiki/File:Girl_with_a_Pearl_Earring_(Full_Renovation).jpg) image publicly available on wikimedia commons. The top left image shows the RGB image, with the other three view panels populated by the Red, Green and Blue channels of the image to demonstrate use of the viewer. This viewer has also been used to show other imaging modalities (e.g. infrared) in these other view panels for comparison across image modalities. 
+- **2x2 Grid Layout**: View up to four images simultaneously for easy comparison.
+- **Dynamic Zoom and Pan**: Synchronize zoom and pan across all viewers for seamless navigation.
+- **Curtain Mode**: Overlay images and adjust visibility dynamically by moving the cursor, enabling interactive comparisons.
+- **Simple File Input**: Load images directly from your computer using the intuitive interface.
+- **Privacy Assured**: Images remain on your system and are not uploaded to any server.
 
-To use this viewer with your own high-resolution images, replace the files in [GeneratedImages](GeneratedImages). 
-The images must be in Deep Zoom Image (DZI) format. High-resolution images can be converted to DZI format images using [VIPS](https://github.com/libvips/libvips) with the command ```vips.exe dzsave <InputImagePath> <OutputImagePath>```. The file organisation must also remain unchanged, with images in DZI format stored within folders [/GeneratedImages/Img1](GeneratedImages/Img1), [/GeneratedImages/Img2](GeneratedImages/Img2), [/GeneratedImages/Img3](GeneratedImages/Img3), [/GeneratedImages/Img4](GeneratedImages/Img4).
+## Requirements
 
-To use this viewer locally (viewing files which are not hosted online), many browsers restrict the access to local files for security reasons. In Chrome this can be overridden with a flag such as --allow-file-access-from-files when starting. This can be achieved on Windows by creating a shortcut with the following target: ``` "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" file:///<full file path to index>index.html --allow-file-access-from-files ``` with ```<full file path to index>``` updated to the file path of your local file system (e.g. ```C:\Users\Username\Documents\ZoomViewer\index.html```). 
+- A modern web browser (e.g., Chrome, Firefox, Edge) with support for HTML5 and JavaScript.
+
+## Getting Started
+
+1. **Open the Tool**:
+
+   - Access the viewer at the web deployment: [https://charliewillard.github.io/ZoomImageViewer/](https://charliewillard.github.io/ZoomImageViewer/)
+
+2. **Load Images**:
+
+   - Use the input buttons labeled "Image 1", "Image 2", etc., to select and load image files from your computer.
+
+3. **Navigate**:
+
+   - Use your mouse to pan and zoom on any image. All images will synchronize automatically.
+
+4. **Toggle Curtain Mode**:
+
+   - Check the "Curtain Viewer Mode" box to overlay the images. Move your cursor within the viewer to adjust visibility boundaries dynamically.
+
+## File Formats Supported
+
+- **Standard Image Formats**: JPG, PNG, and TIFF are supported for easy comparison.
+- **Tiled Image Formats**: While the libraries used (e.g., OpenSeadragon) support tiled formats for very high-resolution imagery, browser restrictions may cause issues when loading such formats from local files. To use tiled images, consider hosting them online and making minor edits to the code.
+
+## Limitations
+
+- Large image files may impact performance depending on your browser and system capabilities.
+- Images must be pre-aligned (co-registered) for accurate comparisons.
+
+## Acknowledgments
+
+This tool leverages OpenSeadragon for zooming and panning functionality, providing a powerful interface for image navigation. It is inspired by Rob Erdmann's demonstrations of his curtain viewer and has been independently developed for broader conservation and comparison use cases.
