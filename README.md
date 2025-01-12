@@ -18,7 +18,7 @@ This tool allows conservators and other users to compare multiple images in a si
 
 1. **Open the Tool**:
 
-   - Access the viewer at the web deployment: <a href="https://charliewillard.github.io/ZoomImageViewer/" target="_blank">https://charliewillard.github.io/ZoomImageViewer/</a>
+   - Access the viewer at the web deployment: https://charliewillard.github.io/ZoomImageViewer
 
 2. **Load Images**:
 
