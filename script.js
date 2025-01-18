@@ -101,8 +101,9 @@ function initializeViewer(index, imageSrc) {
         },
         showNavigationControl: false,
         maxZoomLevel: 20,
+		minZoomLevel: 1.0,
         visibilityRatio: 1.0,
-        defaultZoomLevel: 0.9,
+        defaultZoomLevel: 1.0,
         maxZoomPixelRatio: 4,
         background: "black",
     });
@@ -236,6 +237,7 @@ function initializeCurtainViewer(index, imageSrc) {
         },
         showNavigationControl: false,
         maxZoomLevel: 20,
+		minZoomLevel: 0.25,
         visibilityRatio: 1.0,
         defaultZoomLevel: 0.9,
         maxZoomPixelRatio: 4,
