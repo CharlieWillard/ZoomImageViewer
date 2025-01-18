@@ -151,6 +151,15 @@ function resampleImage(image, targetWidth, targetHeight) {
     return canvas.toDataURL(); // Return the resampled image as a data URL
 }
 
+// Check if the device is touch-enabled
+function isTouchDevice() {
+    // Check if touch events are supported AND distinguish from hybrid laptops
+    const hasTouchEvents = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isMouseOnly = matchMedia('(pointer: fine)').matches;
+
+    return hasTouchEvents && !isMouseOnly; // True only for genuine touch devices
+}
+
 // Initialize or update the curtain mode viewers
 function initializeCurtainModeViewers() {
     const imageGrid = document.getElementById('imageGrid');
@@ -176,8 +185,19 @@ function initializeCurtainModeViewers() {
     }
 
     const imageGridContainer = document.getElementById('imageGrid');
-    imageGridContainer.addEventListener('mousemove', updateCurtainBoundaries);
+
+    if (isTouchDevice()) {
+        // For touch devices, center the splits
+        setCentralSplitForTouch();
+        console.log("Touch device detected: Fixed central split applied.");
+        imageGridContainer.removeEventListener('mousemove', updateCurtainBoundaries); // Ensure no mousemove event
+    } else {
+        // For non-touch devices, enable cursor-based splits
+        imageGridContainer.addEventListener('mousemove', updateCurtainBoundaries);
+        console.log("Non-touch device detected: Reactive split applied.");
+    }
 }
+
 
 // Function to initialize or update a curtain viewer
 function initializeCurtainViewer(index, imageSrc) {
@@ -227,7 +247,32 @@ function initializeCurtainViewer(index, imageSrc) {
     viewer.addHandler("pan", () => handleViewerInteraction(curtainViewers, index));
 }
 
-// Update curtain boundaries based on mouse movement
+// Set central split for curtain mode on touch devices
+function setCentralSplitForTouch() {
+    curtainViewers.forEach((viewer, index) => {
+        const element = document.getElementById(`curtainViewer${index + 1}`);
+        if (element) {
+            let clipPath;
+            switch (index) {
+                case 0: // Top-left
+                    clipPath = `polygon(0 0, 0 50%, 50% 50%, 50% 0)`;
+                    break;
+                case 1: // Top-right
+                    clipPath = `polygon(50% 0, 50% 50%, 100% 50%, 100% 0)`;
+                    break;
+                case 2: // Bottom-left
+                    clipPath = `polygon(0 50%, 0 100%, 50% 100%, 50% 50%)`;
+                    break;
+                case 3: // Bottom-right
+                    clipPath = `polygon(50% 50%, 50% 100%, 100% 100%, 100% 50%)`;
+                    break;
+            }
+            element.style.clipPath = clipPath;
+        }
+    });
+}
+
+// Update curtain boundaries based on mouse movement (for non-touch devices)
 function updateCurtainBoundaries(event) {
     const rect = document.getElementById('imageGrid').getBoundingClientRect();
     const offsetX = 2; // Small horizontal offset
@@ -261,7 +306,6 @@ function updateCurtainBoundaries(event) {
         }
     });
 }
-
 // Synchronize viewers when interaction happens
 function handleViewerInteraction(viewersArray, leadingIndex) {
     if (isSyncing || !viewersArray[leadingIndex]) return;
