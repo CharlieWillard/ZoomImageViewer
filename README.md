@@ -45,3 +45,8 @@ This tool allows conservators and other users to compare multiple images in a si
 ## Acknowledgments
 
 This tool leverages OpenSeadragon for zooming and panning functionality, providing a powerful interface for image navigation. It is inspired by Rob Erdmann's demonstrations of his curtain viewer and has been independently developed for broader conservation and comparison use cases.
+
+## License
+
+This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.  
+You may use, modify, and share this work for non-commercial purposes with proper attribution.
